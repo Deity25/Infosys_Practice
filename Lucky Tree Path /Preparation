@@ -1,0 +1,96 @@
+🔥 CORE QUESTION SET (DO THESE — NO EXCUSES)
+✅ 1. Arrays / Hashing (VERY HIGH PROBABILITY)
+Practice these EXACT problems:
+Two Sum
+Subarray Sum = K
+Maximum Subarray (Kadane’s)
+Longest Substring Without Repeating Characters
+Group Anagrams
+Majority Element
+👉 If you can’t solve these fast → you’re not ready
+✅ 2. Sliding Window
+Longest substring with K distinct
+Minimum window substring (basic version)
+Max sum of subarray size K
+✅ 3. Strings (IMPORTANT)
+Reverse words in string
+Check palindrome (ignore spaces/case)
+Count vowels/consonants
+String compression
+✅ 4. Sorting + Binary Search
+Binary search (basic + variations)
+First/last occurrence
+Search in rotated array
+✅ 5. Recursion / Backtracking (LIGHT)
+Generate subsets
+Permutations (basic)
+⚠️ 6. Trees (ONLY BASIC)
+Level order traversal
+Height of tree
+⚠️ 7. Graph (ONLY ONE TYPE)
+BFS traversal
+Number of islands (very common pattern)
+⚠️ 8. DP (MINIMUM ONLY)
+Climbing stairs
+Fibonacci DP
+0/1 Knapsack (idea only)
+🧪 ACTUAL EXAM-TYPE QUESTIONS (IMPORTANT)
+These are how questions are framed:
+🔹 Example 1 (Very Common)
+“Given an array, find subarray with sum = K”
+Mistake people do:
+don’t use hashmap → TLE or wrong
+🔹 Example 2
+“Find longest substring without repeating characters”
+Mistake:
+brute force instead of sliding window
+🔹 Example 3
+“Check if string is palindrome ignoring special chars”
+Mistake:
+not handling edge cases
+🔹 Example 4
+“Booking system / seat allocation logic”
+Mistake:
+poor condition handling
+🔹 Example 5
+“Find duplicates / frequency-based logic”
+Mistake:
+not using hashmap properly
+⚠️ YOUR EXACT WEAK POINTS (FIX THESE)
+Based on your TCS failure:
+1. Output format mistakes
+int vs double (.00 issue)
+printing wrong format
+2. Not testing edge cases
+Always check:
+empty input
+single element
+large input
+3. Panic on small bug
+You lose time on:
+syntax
+logic mistake
+🧠 HOW YOU SHOULD PRACTICE
+RULE 1:
+Solve with timer (45 min max)
+RULE 2:
+After solving → write:
+what mistake you did
+RULE 3:
+Re-solve same question next day
+→ build speed
+🚫 WHAT NOT TO DO
+Don’t collect 1000 questions
+Don’t jump to hard DP
+Don’t just watch solutions
+🎯 FINAL CHECKLIST (before exam)
+You are ready ONLY if:
+You can solve 2 questions in 60–70 mins
+Your output is ALWAYS correct
+You don’t panic
+Final blunt truth
+You didn’t fail before because:
+“question was hard”
+You failed because:
+you couldn’t execute cleanly under time
+Fix that → you clear Infosys.
