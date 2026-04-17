@@ -1,0 +1,86 @@
+In this problem, you are given an undirected tree with n 𝑛 nodes. Alice starts at node 0 and wants to reach any leaf node, while Bob starts at a given node bob and must reach node 0.
+import java.util.*;
+
+class Solution {
+    private List<Integer>[] adj;
+    private int[] bobTime;
+    private int n;
+
+    public int mostProfitablePath(int[][] edges, int bob, int[] amount) {
+        n = amount.length;
+        adj = new ArrayList[n];
+        for (int i = 0; i < n; i++) adj[i] = new ArrayList<>();
+        for (int[] edge : edges) {
+            adj[edge[0]].add(edge[1]);
+            adj[edge[1]].add(edge[0]);
+        }
+
+        // bobTime[i] will store the time Bob reaches node i.
+        // Initialize with a large value meaning Bob never visits.
+        bobTime = new int[n];
+        Arrays.fill(bobTime, n + 1);
+
+        // Step 1: Find Bob's path to 0 and record arrival times
+        findBobPath(bob, -1, 0);
+
+        // Step 2: DFS for Alice starting at 0
+        return findAliceMaxProfit(0, -1, 0, amount);
+    }
+
+    private boolean findBobPath(int node, int parent, int time) {
+        if (node == 0) {
+            bobTime[node] = time;
+            return true;
+        }
+        for (int neighbor : adj[node]) {
+            if (neighbor != parent && findBobPath(neighbor, node, time + 1)) {
+                bobTime[node] = time;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private int findAliceMaxProfit(int node, int parent, int time, int[] amount) {
+        int currentProfit = 0;
+
+        // Interaction Logic:
+        // Alice arrives first
+        if (time < bobTime[node]) {
+            currentProfit = amount[node];
+        } 
+        // Alice and Bob arrive simultaneously
+        else if (time == bobTime[node]) {
+            currentProfit = amount[node] / 2;
+        } 
+        // Bob arrives first (Alice gets 0)
+
+        int maxChildProfit = Integer.MIN_VALUE;
+        for (int neighbor : adj[node]) {
+            if (neighbor != parent) {
+                maxChildProfit = Math.max(maxChildProfit, findAliceMaxProfit(neighbor, node, time + 1, amount));
+            }
+        }
+
+        // If no children were visited, this is a leaf node
+        return (maxChildProfit == Integer.MIN_VALUE) ? currentProfit : currentProfit + maxChildProfit;
+    }
+}
+
+
+
+
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) return false;
+        
+        // If it's a leaf node, check if the remaining sum equals its value
+        if (root.left == null && root.right == null) {
+            return targetSum == root.val;
+        }
+        
+        // Otherwise, subtract current value from target and check children
+        return hasPathSum(root.left, targetSum - root.val) || 
+               hasPathSum(root.right, targetSum - root.val);
+    }
+}
