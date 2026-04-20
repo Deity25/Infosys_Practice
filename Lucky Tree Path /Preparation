@@ -1,39 +1,39 @@
 🔥 CORE QUESTION SET (DO THESE — NO EXCUSES)
 ✅ 1. Arrays / Hashing (VERY HIGH PROBABILITY)
 Practice these EXACT problems:
-Two Sum
-Subarray Sum = K
-Maximum Subarray (Kadane’s)
-Longest Substring Without Repeating Characters
-Group Anagrams
-Majority Element
+1. Two Sum
+2. Subarray Sum = K
+3. Maximum Subarray (Kadane’s)
+4. Longest Substring Without Repeating Characters
+5. Group Anagrams
+6. Majority Element
 👉 If you can’t solve these fast → you’re not ready
 ✅ 2. Sliding Window
-Longest substring with K distinct
-Minimum window substring (basic version)
-Max sum of subarray size K
+1. Longest substring with K distinct
+2. Minimum window substring (basic version)
+3. Max sum of subarray size K
 ✅ 3. Strings (IMPORTANT)
-Reverse words in string
-Check palindrome (ignore spaces/case)
-Count vowels/consonants
-String compression
+1. Reverse words in string
+2. Check palindrome (ignore spaces/case)
+3. Count vowels/consonants
+4. String compression
 ✅ 4. Sorting + Binary Search
-Binary search (basic + variations)
-First/last occurrence
-Search in rotated array
+1. Binary search (basic + variations)
+2. First/last occurrence
+3. Search in rotated array
 ✅ 5. Recursion / Backtracking (LIGHT)
-Generate subsets
-Permutations (basic)
+1. Generate subsets
+2. Permutations (basic)
 ⚠️ 6. Trees (ONLY BASIC)
-Level order traversal
-Height of tree
+1. Level order traversal
+2. Height of tree
 ⚠️ 7. Graph (ONLY ONE TYPE)
-BFS traversal
-Number of islands (very common pattern)
+1. BFS traversal
+2. Number of islands (very common pattern)
 ⚠️ 8. DP (MINIMUM ONLY)
-Climbing stairs
-Fibonacci DP
-0/1 Knapsack (idea only)
+1. Climbing stairs
+2. Fibonacci DP
+3. 0/1 Knapsack (idea only)
 🧪 ACTUAL EXAM-TYPE QUESTIONS (IMPORTANT)
 These are how questions are framed:
 🔹 Example 1 (Very Common)
