@@ -1,0 +1,31 @@
+Question 1 — Sliding Window + Deque (same pattern you struggled with)
+📌 Problem (as asked)
+Given n, x, k (n divisible by k)
+Build array a of size n
+Every subarray of length k has product = x
+2 ≤ a[i] ≤ x
+Array must be lexicographically smallest
+Compute:
+∑(a[i]⋅p 
+i
+ )mod(10 
+9
+ +7)
+where p = 10^9 + 9
+
+🎯 What they are testing
+Do you understand factorization
+Do you understand lexicographic minimization
+Can you combine math + greedy
+
+🧠 How to think (this is where you failed)
+Step 1:
+“Every k segment has same product”
+👉 Means array repeats every k
+Step 2:
+“Lexicographically smallest”
+👉 Put smallest numbers first
+Step 3:
+“Product = x”
+👉 Break x into factors
+
