@@ -29,3 +29,10 @@ Step 3:
 “Product = x”
 👉 Break x into factors
 
+✅ Correct approach
+Prime factorize x
+If number of factors < k → return -1
+Distribute factors into k buckets (keep numbers small)
+Sort → lexicographically minimal
+Repeat segment
+Compute modular sum
