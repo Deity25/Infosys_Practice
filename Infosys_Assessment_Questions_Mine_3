@@ -1,1 +1,88 @@
+🔴 QUESTION 3 — Stations and Score
 
+You are positioned at station 1 on a linear path consisting of N stations, Each station i (from 1 to N) has an associated score s[il, which can be positive, negative, or zero. You begin your
+journey with Funits of fuel.
+Movement and Fuel • You start at station 1 and automatically
+collect the score s[1]. • From your current station i, you may jump forward to any station j such that i < j and j is less than or equal to the minimum of N
+and (i + MAX). • The fuel cost for a jump from i to j is
+exactly i - i units of fuel.
+•Youcanonlyperformajumpifyour remaining fuel is greater than or equal to
+the cost of that jump. • You may choose to end your journey at any station you land on, or you must stop if no further valid jumps are possible due to fuel
+or distance constraints. d Scoring You collect the store s[i] for every
+station i that you land. on during your journey. Find the maximum total sum of scores
+collected.
+Note: • Since fuel cost is equal to the distance traveled, the total fuel consumed to reach
+station i from station f is exactly (i - 1),regardless of the intermediate jumps.
+
+📌 Problem
+Start at station 1
+Can jump up to MAX
+Fuel limits total distance
+Maximize collected score
+
+🎯 What they test
+DP + optimization
+Sliding window max
+
+🧠 How to think
+Key realization:
+Fuel to reach i = i - 1
+So limit = min(n, F+1)
+
+Now:
+dp[i] = best previous + current
+But previous only from:
+[i - MAX ... i - 1]
+
+❌ Your mistake
+Greedy (take positives)
+✅ Approach
+DP
+Use deque for max
+
+2 Cases Failed: 
+
+All 12 Cases Passed: 
+
+import java.util.*;
+class Main {
+    public static long solve(int n, int f, int max, int[] s) {
+        int limit = Math.min(n, f + 1);
+        long[] dp = new long[limit];
+
+        Deque<Integer> dq = new ArrayDeque<>();
+        dp[0] = s[0];
+        dq.add(0);
+
+        for (int i = 1; i < limit; i++) {
+            while (!dq.isEmpty() && dq.peekFirst() < i - max)
+                dq.pollFirst();
+
+            dp[i] = s[i] + dp[dq.peekFirst()];
+
+            while (!dq.isEmpty() && dp[dq.peekLast()] <= dp[i])
+                dq.pollLast();
+
+            dq.add(i);
+        }
+
+        long ans = Long.MIN_VALUE;
+        for (long v : dp) ans = Math.max(ans, v);
+
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), f = sc.nextInt(), max = sc.nextInt();
+        int[] s = new int[n];
+        for (int i = 0; i < n; i++) s[i] = sc.nextInt();
+        System.out.println(solve(n, f, max, s));
+    }
+}
+
+🧠 Why this matters
+Real-world DP optimization
+Tests if you know:
+sliding window max
+deque trick
