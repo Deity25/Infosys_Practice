@@ -1,0 +1,13 @@
+🔥 FINAL ANALYSIS (YOUR PERFORMANCE)
+Question	 What you did	       What you should do
+  Q1	     forced pattern	     factorization + greedy
+  Q2	     guessed formulas	   DP modeling
+  Q3	     fixed after hint	   DP + deque
+
+🧠 What interviewers expect
+Before coding, they expect:
+"This looks like DP because..."
+"This is greedy because..."
+"This is sliding window because..."
+
+
