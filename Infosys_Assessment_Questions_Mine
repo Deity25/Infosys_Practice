@@ -102,4 +102,58 @@ class Main {
 
 2 Test Cases failed below gemini code: 
 
+import java.util.*;
 
+class Main {
+    public static int solve(int n, int x, int k) {
+        long MOD = 1000000007L;
+        long P = 1000000009L;
+        int[] segment = new int[k];
+        long currentProduct = 1;
+
+        // Construct the lexicographically minimal segment
+        for (int i = 0; i < k - 1; i++) {
+            segment[i] = 2;
+            // Check for overflow or exceeding x early
+            if (currentProduct > x / 2) return -1;
+            currentProduct *= 2;
+        }
+
+        // The product of all k elements must be exactly x
+        if (x % currentProduct != 0) return -1;
+        long lastVal = x / currentProduct;
+        
+        // Check constraints: elements must be between 2 and x
+        if (lastVal < 2 || lastVal > x) return -1;
+        
+        segment[k - 1] = (int) lastVal;
+        Arrays.sort(segment); // Sort to ensure lexicographical minimality
+
+        long totalSum = 0;
+        long pPow = 1;
+
+        // Calculate the sum considering indexing starts from 0
+        for (int i = 0; i < n; i++) {
+            long val = (long) segment[i % k];
+            
+            // Apply modulo at every step to prevent overflow
+            long term = (val * pPow) % MOD;
+            totalSum = (totalSum + term) % MOD;
+            
+            // Use (P % MOD) to ensure we stay within long limits during multiplication
+            pPow = (pPow * (P % MOD)) % MOD;
+        }
+
+        return (int) totalSum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        if (sc.hasNextInt()) {
+            int n = sc.nextInt();
+            int x = sc.nextInt();
+            int k = sc.nextInt();
+            System.out.println(solve(n, x, k));
+        }
+    }
+}
