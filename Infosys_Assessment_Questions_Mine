@@ -1,4 +1,13 @@
 Question 1 — Sliding Window + Deque (same pattern you struggled with)
+you are given 3 integer n, x, k where n is divisible by k you're task is to construct and
+array a of sizen such that: - the product of each segment of length k in a
+is equal to x - the elements of a fall between 2 and x (2 <=
+a [i] <= x)
+- the array a is lexicographically minimal
+define p = 10^9 + 9 Find the sum of (ali] *p^i) modulo 10^9 + 7
+considering indexing starts from 0
+if no answer exist print -1
+
 📌 Problem (as asked)
 Given n, x, k (n divisible by k)
 Build array a of size n
@@ -36,3 +45,61 @@ Distribute factors into k buckets (keep numbers small)
 Sort → lexicographically minimal
 Repeat segment
 Compute modular sum
+
+
+import java.util.*;
+
+class Main {
+    public static int solve(int n, int x, int k) {
+        long MOD = 1000000007L, P = 1000000009L;
+
+        List<Integer> factors = new ArrayList<>();
+        int temp = x;
+
+        for (int i = 2; i * i <= temp; i++) {
+            while (temp % i == 0) {
+                factors.add(i);
+                temp /= i;
+            }
+        }
+        if (temp > 1) factors.add(temp);
+
+        if (factors.size() < k) return -1;
+
+        int[] seg = new int[k];
+        Arrays.fill(seg, 1);
+
+        for (int f : factors) {
+            int idx = 0;
+            for (int i = 1; i < k; i++)
+                if (seg[i] < seg[idx]) idx = i;
+
+            seg[idx] *= f;
+        }
+
+        for (int v : seg) if (v < 2) return -1;
+
+        Arrays.sort(seg);
+
+        long sum = 0, pPow = 1, pMod = P % MOD;
+
+        for (int i = 0; i < n; i++) {
+            sum = (sum + seg[i % k] * pPow % MOD) % MOD;
+            pPow = (pPow * pMod) % MOD;
+        }
+
+        return (int) sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), x = sc.nextInt(), k = sc.nextInt();
+        System.out.println(solve(n, x, k));
+    }
+}
+
+
+
+2 Test Cases failed below gemini code: 
+
+
