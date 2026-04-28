@@ -1,4 +1,5 @@
 Question 1 — Sliding Window + Deque (same pattern you struggled with)
+
 you are given 3 integer n, x, k where n is divisible by k you're task is to construct and
 array a of sizen such that: - the product of each segment of length k in a
 is equal to x - the elements of a fall between 2 and x (2 <=
