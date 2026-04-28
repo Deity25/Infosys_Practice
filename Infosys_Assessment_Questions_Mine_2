@@ -1,4 +1,5 @@
 🔴 QUESTION 2 — Subarray Partitioning (Max Score)
+
 You are given an array a[1..NJ and an integer K, partition the array into exactly K non-empty
 contiguous groups The score of a group is the count of its most
 frequent element (its mode frequency). Find the maximum total mode-frequency
