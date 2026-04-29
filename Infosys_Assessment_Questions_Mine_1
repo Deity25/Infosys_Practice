@@ -1,13 +1,8 @@
 Question 1 — Sliding Window + Deque (same pattern you struggled with)
 
-you are given 3 integer n, x, k where n is divisible by k you're task is to construct and
-array a of sizen such that: - the product of each segment of length k in a
-is equal to x - the elements of a fall between 2 and x (2 <=
-a [i] <= x)
-- the array a is lexicographically minimal
-define p = 10^9 + 9 Find the sum of (ali] *p^i) modulo 10^9 + 7
-considering indexing starts from 0
-if no answer exist print -1
+you are given 3 integer n, x, k where n is divisible by k you're task is to construct and array a of size n such that: - the product of each segment of length k in a
+is equal to x - the elements of a fall between 2 and x (2 <= a [i] <= x) - the array a is lexicographically minima define p = 10^9 + 9 Find the sum of (ali] *p^i) modulo 10^9 + 7
+considering indexing starts from 0 if no answer exist print -1
 
 📌 Problem (as asked)
 Given n, x, k (n divisible by k)
